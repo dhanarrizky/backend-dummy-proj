@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PEMROGRAMMAN\\todo-list\\todolist_dotnet\\todolist_dotnet.csproj": {}
+    "D:\\PEMROGRAMMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {}
   },
   "projects": {
-    "D:\\PEMROGRAMMAN\\todo-list\\todolist_dotnet\\todolist_dotnet.csproj": {
+    "D:\\PEMROGRAMMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PEMROGRAMMAN\\todo-list\\todolist_dotnet\\todolist_dotnet.csproj",
-        "projectName": "todolist_dotnet",
-        "projectPath": "D:\\PEMROGRAMMAN\\todo-list\\todolist_dotnet\\todolist_dotnet.csproj",
+        "projectUniqueName": "D:\\PEMROGRAMMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
+        "projectName": "todolist__dotnet",
+        "projectPath": "D:\\PEMROGRAMMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
         "packagesPath": "C:\\Users\\TUF\\.nuget\\packages\\",
-        "outputPath": "D:\\PEMROGRAMMAN\\todo-list\\todolist_dotnet\\obj\\",
+        "outputPath": "D:\\PEMROGRAMMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TUF\\AppData\\Roaming\\NuGet\\NuGet.Config"
