@@ -14,4 +14,14 @@ public class LoginController : ControllerBase {
     public IActionResult Register(){
         return Ok();
     }
+
+    [HttpPost("OtpCode")]
+    public IActionResult OtpCode(){
+        return Ok();
+    }
+
+    [HttpPost("ConfirmPass")]
+    public IActionResult ConfirmPass(){
+        return Ok();
+    }
 }
