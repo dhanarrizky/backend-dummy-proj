@@ -1,30 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {}
+    "C:\\dhanar_rizky_krisnadhy\\PROGRAMMING\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {}
   },
   "projects": {
-    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {
+    "C:\\dhanar_rizky_krisnadhy\\PROGRAMMING\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
+        "projectUniqueName": "C:\\dhanar_rizky_krisnadhy\\PROGRAMMING\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
         "projectName": "todolist__dotnet",
-        "projectPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
-        "packagesPath": "C:\\Users\\dhana\\.nuget\\packages\\",
-        "outputPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\obj\\",
+        "projectPath": "C:\\dhanar_rizky_krisnadhy\\PROGRAMMING\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
+        "packagesPath": "C:\\Users\\900682\\.nuget\\packages\\",
+        "outputPath": "C:\\dhanar_rizky_krisnadhy\\PROGRAMMING\\backend-dummy-proj\\todo-list\\todolist__dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dhana\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\900682\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -32,20 +34,15 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[7.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -71,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
