@@ -63,7 +63,8 @@ AS $$
 BEGIN
     SELECT * FROM account WHERE username = user_account_inp;
     IF NOT FOUND THEN 
-        RETURN 'failed : warning - user_account is not found!!'
+        RAISE NOTICE '%','warning - user_account is not found!!';
+        RETURN 'failed : warning - user_account is not found!!';
     END IF;
 
     INSERT INTO group_note(
@@ -73,11 +74,12 @@ BEGIN
         user_account_inp, title_inp
     )
 
-    COMMIT;
+    -- COMMIT;
     RETURN 'success : success - Added new group_note has been successfully..';
 EXCEPTION
     WHEN OTHERS THEN
     ROLLBACK;
+    RAISE NOTICE '%', 'warning - user_account is not found!!';
     RETURN 'failed :  error - failed to inserting data new user, please try again';
 END $$
 
