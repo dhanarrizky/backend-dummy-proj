@@ -24,6 +24,11 @@
 
 -- -- user
 -- 1. show profile
+    SELECT * FROM account WHERE username = '';
 -- 2. show my group
+    SELECT * FROM group_note WHERE user_account = '';
 -- 3. show my note by group
+    SELECT * FROM group_note AS g
+        JOIN note AS n ON n.group_note_id = g.id
+        WHERE g.user_account = '';
 -- 4. show detail note
