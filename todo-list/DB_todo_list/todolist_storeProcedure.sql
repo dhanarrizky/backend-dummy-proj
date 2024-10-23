@@ -68,7 +68,8 @@ BEGIN
         SET 
             password = pass,
             email = eml,
-            phonenumber = phn_num
+            phonenumber = phn_num,
+            updated_at = NOW()
         WHERE username = username_inp;
 
         RETURN 'success : Updated account has been successfully';    
@@ -167,4 +168,40 @@ BEGIN
 EXCEPTION
     WHEN OTHERS THEN
         RETURN 'failed : Error inserting note: ' || SQLERRM;
+END; $$;
+
+-- query for  update todo list note
+CREATE OR REPLACE PROCEDURE add_new_todo_list(
+    id_inp INT,
+    title_inp VARCHAR,
+    text_content_inp TEXT
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    title_val VARCHAR;
+    text_content_val TEXT;
+BEGIN
+    IF EXISTS (
+        SELECT 1 FROM note WHERE id = id_inp
+    ) THEN 
+        SELECT 
+            COALESCE(NULLIF(title_inp,''), title) AS title,
+            COALESCE(NULLIF(text_content_inp,''), text_content) AS text_content,
+        INTO
+            title_val, text_content_val
+        FROM note
+        WHERE id = id_inp;
+
+        UPDATE note
+        SET title = title_val, text_content = text_content_val, updated_at = NOW()
+        WHERE id = id_inp;
+
+        RETURN 'success : Updated note has been successfully..';
+    ELSE
+        RETURN 'failed : warning - note is not found!!';
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN 'failed : Error updated note: ' || SQLERRM;
 END; $$;

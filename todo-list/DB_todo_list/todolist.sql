@@ -37,4 +37,5 @@ CREATE TABLE note (
     deleted_at TIMESTAMP
 )
 
+CREATE INDEX idx_note_id ON note(id);
 
