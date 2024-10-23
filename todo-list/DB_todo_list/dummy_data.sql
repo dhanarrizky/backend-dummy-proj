@@ -1,28 +1,23 @@
+-- Insert dummy data into 'account'
 INSERT INTO account (username, password, email, phonenumber)
-SELECT 
-    CONCAT('user_', md5(random()::text)) AS username,
-    md5(random()::text) AS password,
-    CONCAT(md5(random()::text), '@example.com') AS email,
-    CONCAT('+123456', floor(random() * 1000000)::text) AS phonenumber
-FROM generate_series(1, 500);  -- Create 500 accounts
+VALUES
+('john_doe', 'hashedpassword1', 'john@example.com', '081234567890'),
+('jane_doe', 'hashedpassword2', 'jane@example.com', '081234567891'),
+('alex_smith', 'hashedpassword3', 'alex@example.com', '081234567892');
 
+-- Insert dummy data into 'group_note'
+INSERT INTO group_note (user_account, title)
+VALUES
+('john_doe', 'Work Tasks'),
+('john_doe', 'Personal Tasks'),
+('jane_doe', 'Shopping List'),
+('alex_smith', 'Study Notes');
 
-
-INSERT INTO "group" (user_account, title)
-SELECT 
-    username AS user_account, 
-    CONCAT('Group_', md5(random()::text)) AS title
-FROM account
-ORDER BY random()
-LIMIT 500;  -- Create 500 groups linked to random accounts
-
-
-INSERT INTO note (group_id, title, text_content, checked)
-SELECT 
-    id AS group_id, 
-    CONCAT('Note_', md5(random()::text)) AS title,
-    md5(random()::text) AS text_content,
-    (random() > 0.5) AS checked
-FROM "group"
-ORDER BY random()
-LIMIT 1500;  -- Create 1500 notes linked to random groups
+-- Insert dummy data into 'note'
+INSERT INTO note (group_note_id, title, text_content, checked)
+VALUES
+(1, 'Finish Project', 'Complete the project by the end of the week', FALSE),
+(1, 'Client Meeting', 'Prepare slides for client presentation', TRUE),
+(2, 'Grocery Shopping', 'Buy milk, eggs, and bread', FALSE),
+(3, 'Read Book', 'Finish reading "The Pragmatic Programmer"', TRUE),
+(4, 'Complete Assignment', 'Finish database assignment by Monday', FALSE);
