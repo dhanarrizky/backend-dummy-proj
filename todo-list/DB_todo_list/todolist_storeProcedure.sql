@@ -9,26 +9,21 @@ RETURNS TEXT
 LANGUAGE plpgsql
 AS $$
 DECLARE
-    unique_count INT,
     err_msg VARCHAR(100)
 BEGIN
-    SELECT COUNT(*) INTO unique_count
-    FROM account
-    WHERE username = user_account_inp OR 
-        email = email_inp OR
-        phonenumber = phonenumber_inp
-    
-
-    IF unique_count > 0 THEN
+    IF EXISTS (
+        SELECT 1
+        FROM account
+        WHERE username = user_account_inp OR 
+            email = email_inp OR
+            phonenumber = phonenumber_inp
+    ) THEN
         IF EXISTS (SELECT 1 FROM account WHERE username = user_account_inp) THEN
             err_msg := 'username must be unique.'
-            RAISE NOTICE '%', err_msg;
         ELSIF EXISTS (SELECT 1 FROM account WHERE email = email_inp) THEN
             err_msg := 'email must be unique.';
-            RAISE NOTICE '%', err_msg;
         ELSE
             err_msg := 'phonenumber must be unique.';
-            RAISE NOTICE '%', err_msg;
         END IF;
 
         RETURN 'failed : ' || err_msg;
@@ -41,12 +36,13 @@ BEGIN
         username_inp, password_inp, email_inp, phonenumber_inp
     )
 
-    -- COMMIT;
+    COMMIT;
     RETURN 'success : success - Registration of new user has been successfully.';
 
 EXCEPTION
     WHEN OTHERS THEN
     ROLLBACK;
+    RAISE NOTICE 'Error inserting new user: %', SQLERRM;
     RETURN 'failed :  error - failed to inserting data new user, please try again!.';
 END $$
 
@@ -61,9 +57,10 @@ RETURNS TEXT
 LANGUAGE plpgsql
 AS $$
 BEGIN
-    SELECT * FROM account WHERE username = user_account_inp;
-    IF NOT FOUND THEN 
-        RAISE NOTICE '%','warning - user_account is not found!!';
+    
+    IF EXISTS (
+        SELECT 1 FROM account WHERE username = user_account_inp;
+    ) THEN 
         RETURN 'failed : warning - user_account is not found!!';
     END IF;
 
@@ -74,12 +71,12 @@ BEGIN
         user_account_inp, title_inp
     )
 
-    -- COMMIT;
+    COMMIT;
     RETURN 'success : success - Added new group_note has been successfully..';
 EXCEPTION
     WHEN OTHERS THEN
     ROLLBACK;
-    RAISE NOTICE '%', 'warning - user_account is not found!!';
+    RAISE NOTICE 'Error inserting group_note: %', SQLERRM;
     RETURN 'failed :  error - failed to inserting data new user, please try again';
 END $$
 
@@ -95,8 +92,10 @@ RETURNS TEXT
 LANGUAGE plpgsql
 AS $$
 BEGIN
-    SELECT * FROM group_note WHERE id = group_note_id_inp;
-    IF NOT FOUND THEN 
+    
+    IF EXISTS (
+        SELECT 1 FROM group_note WHERE id = group_note_id_inp;
+    ) THEN 
         RETURN 'failed : warning - group_note is not found!!'
     END IF;
 
@@ -115,5 +114,6 @@ BEGIN
 EXCEPTION
     WHEN OTHERS THEN
     ROLLBACK;
+    RAISE NOTICE 'Error inserting group_note: %', SQLERRM;
     RETURN 'failed :  error - failed to inserting data new note, please try again';
 END $$;
