@@ -1,3 +1,5 @@
+-- ================================ aCCOUNT
+
 -- query for createing procedure for added new users
 CREATE OR REPLACE PROCEDURE reg_new_user(
     username_inp VARCHAR,
@@ -46,6 +48,54 @@ EXCEPTION
     RETURN 'failed :  error - failed to inserting data new user, please try again!.';
 END $$
 
+-- updated data account (user)
+CREATE OR REPLACE PROCEDURE update_user(
+    username_inp VARCHAR,
+    password_inp VARCHAR,
+    email_inp VARCHAR,
+    phonenumber_inp VARCHAR
+)
+RETURNS TEXT
+LANGUAGE plpgsql
+DECLARE
+    pass VARCHAR;
+    eml VARCHAR;
+    phn_num VARCHAR;
+AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 FROM account WHERE username = username_inp;
+    ) THEN
+        SELECT 
+            COALESCE(NULLIF(password_inp,''), password) AS password,
+            COALESCE(NULLIF(email_inp,''), email) AS email,
+            COALESCE(NULLIF(phonenumber_inp,''), phonenumber) AS phonenumber           
+        INTO pass, eml, phn_num
+        FROM account 
+        WHERE username = username_inp;
+    
+        UPDATE account
+        SET 
+            password = pass,
+            email = eml,
+            phonenumber = phn_num
+        WHERE username = username_inp;
+
+        COMMIT;
+        RETURN 'Updated account has been successfully';    
+    ELSE
+        ROLLBACK;
+        RETURN 'failed to updated account';
+    END IF;
+EXCEPTION
+WHEN OTHERS THEN
+    ROLLBACK;
+    RAISE NOTICE 'Error updateing user: %', SQLERRM;
+    RETURN 'failed :  error - failed to updated data user, please try again!.';
+END $$
+
+
+-- ================================ GROUP NOTE
 
 
 -- query for add new group_note
@@ -80,6 +130,10 @@ EXCEPTION
     RETURN 'failed :  error - failed to inserting data new user, please try again';
 END $$
 
+
+
+
+-- ================================ NOTES
 
 
 -- add new dotolist
