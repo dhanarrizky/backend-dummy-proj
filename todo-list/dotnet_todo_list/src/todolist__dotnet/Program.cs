@@ -5,7 +5,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<LoginServices>();
+builder.Services.AddTransient<LoginServices>();
 
 var app = builder.Build();
 
