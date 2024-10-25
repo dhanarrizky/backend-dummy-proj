@@ -1,17 +1,106 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {}
+    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist__dotnet\\todolist__dotnet.csproj": {}
   },
   "projects": {
-    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj": {
+    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\todolist_db_access.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
-        "projectName": "todolist__dotnet",
-        "projectPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\todolist__dotnet.csproj",
+        "projectUniqueName": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\todolist_db_access.csproj",
+        "projectName": "todolist_db_access",
+        "projectPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\todolist_db_access.csproj",
         "packagesPath": "C:\\Users\\dhana\\.nuget\\packages\\",
-        "outputPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\todolist__dotnet\\obj\\",
+        "outputPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dhana\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist__dotnet\\todolist__dotnet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist__dotnet\\todolist__dotnet.csproj",
+        "projectName": "todolist__dotnet",
+        "projectPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist__dotnet\\todolist__dotnet.csproj",
+        "packagesPath": "C:\\Users\\dhana\\.nuget\\packages\\",
+        "outputPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist__dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dhana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,7 +114,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\todolist_db_access.csproj": {
+                "projectPath": "D:\\PEMROGRAMAN\\backend-dummy-proj\\todo-list\\dotnet_todo_list\\src\\todolist_db_access\\todolist_db_access.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

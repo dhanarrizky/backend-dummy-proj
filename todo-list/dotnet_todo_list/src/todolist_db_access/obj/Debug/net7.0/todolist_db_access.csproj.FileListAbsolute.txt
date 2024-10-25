@@ -1,0 +1,8 @@
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.csproj.AssemblyReference.cache
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.GeneratedMSBuildEditorConfig.editorconfig
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.AssemblyInfoInputs.cache
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.AssemblyInfo.cs
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.csproj.CoreCompileInputs.cache
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.MvcApplicationPartsAssemblyInfo.cs
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.MvcApplicationPartsAssemblyInfo.cache
+D:\PEMROGRAMAN\backend-dummy-proj\todo-list\dotnet_todo_list\src\todolist_db_access\obj\Debug\net7.0\todolist_db_access.sourcelink.json
